@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta charset="UTF-8">
+		<title>入口</title>
+		<link rel="short icon" href="http://liangcang.vc/favicon.png">
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+		}
+
+		.xx-width {
+			width: 1200px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		.xx-svg__global {
+			position: fixed;
+			z-index: 9999999;
+			background: #fff;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.xx-svg__global svg {
+			width: 64px;
+			height: 64px;
+			animation: rotate 1.2s infinite linear;
+		}
+
+		.xx-svg__global svg path {
+			fill: #fec14d;
+		}
+
+		@keyframes rotate {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+	<body>
+		<div class=xx-svg__global>
+			<svg viewBox="0 0 1024 1024" width=128 height=128>
+				<path d="M512 64c247.2 0 448 200.8 448 448h-64c0-212-172-384-384-384V64z m0 832c-212 0-384-172-384-384H64c0 247.2 200.8 448 448 448v-64z"></path>
+			</svg>
+		</div>
+		<div id=app></div>
+	</body>
+</html>
+<script>
+	function isMobile() {
+		var userAgenInfo = navigator.userAgent
+		var Agents = new Array('Android', 'iPhone', 'SymbianOS', 'iPad', 'iPod')
+		var flag = false
+		for (var v = 0; v < Agents.length; v++) {
+			if (userAgenInfo.indexOf(Agents[v]) > 0) {
+				flag = true
+				break
+			}
+		}
+		return flag
+	}
+	if (isMobile()) {
+		window.location.href = '/m.html#/'
+	} else {
+		window.location.href = '/c.html#/'
+	}
+
+	// //页面进入时获取相关参数，防止直接进入首页
+	// var URL_hash = window.location.hash
+	// if (isMobile()) {
+	//   window.location.href = '/m.html'+ URL_hash
+	// } else {
+	//   window.location.href = '/c.html'+ URL_hash
+	// }
+</script>

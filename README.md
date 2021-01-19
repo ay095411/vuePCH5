@@ -1,4 +1,4 @@
-# new
+# 使用Vue实现一个项目两套代码兼容PC+H5端
 
 > A Vue.js project
 
